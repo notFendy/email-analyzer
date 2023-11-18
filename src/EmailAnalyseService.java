@@ -1,19 +1,13 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static javax.sound.midi.MidiSystem.getReceiver;
 
 public class EmailAnalyseService {
 
@@ -23,7 +17,7 @@ public class EmailAnalyseService {
 
         try {
 
-            Handler handler = new FileHandler("output/logs.log",true);
+            Handler handler = new FileHandler("analysis/logs.log",true);
             SimpleFormatter simpleFormatter = new SimpleFormatter();
             handler.setFormatter(simpleFormatter);
             logger.addHandler(handler);
